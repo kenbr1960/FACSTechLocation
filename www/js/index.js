@@ -45,7 +45,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        alert("In receivedEvent");
+        //alert("In receivedEvent");
         console.log("In receivedEvent 01");
         fillvars();
         checkvalues(false);

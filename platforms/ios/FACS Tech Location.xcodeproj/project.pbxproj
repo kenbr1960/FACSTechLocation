@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		017CEF4FB68A4CA3A3DDEC9B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11FB8ADA434224820C9058 /* Location.m */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
@@ -457,6 +458,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 800;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = WS6W2WZPX3;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FACS Tech Location" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -599,6 +606,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = WS6W2WZPX3;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -606,9 +614,12 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FACS Tech Location/FACS Tech Location-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.facsman.techlocation;
 				PRODUCT_NAME = "FACS Tech Location";
+				PROVISIONING_PROFILE = "ea06b3b5-b143-4bcd-897b-4f5ab8723b0c";
+				PROVISIONING_PROFILE_SPECIFIER = "Gordon's iPhone 6 Plus";
 			};
 			name = Debug;
 		};
@@ -622,11 +633,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FACS Tech Location/FACS Tech Location-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FACS Tech Location/FACS Tech Location-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.facsman.techlocation;
 				PRODUCT_NAME = "FACS Tech Location";
 			};
