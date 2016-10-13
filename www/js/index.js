@@ -227,7 +227,7 @@ function start() {
     // BackgroundGeolocation is highly configurable. See platform specific configuration options
     backgroundGeolocation.configure(callbackFn, failureFn, {
         desiredAccuracy: 10,
-        stationaryRadius: 5,
+        stationaryRadius: 20,
         distanceFilter: 5,
         pauseLocationUpdates: false,
         interval: 1000
