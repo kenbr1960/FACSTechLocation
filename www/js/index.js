@@ -230,6 +230,7 @@ function start() {
         stationaryRadius: 20,
         distanceFilter: 5,
         pauseLocationUpdates: false,
+        locationProvider: 0;
         interval: 1000
     });
 
