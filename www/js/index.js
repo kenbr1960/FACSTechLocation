@@ -200,12 +200,16 @@ function start() {
                 var xmlDoc = xmlhttp.responseText;
                 console.log("Got post response: " + xmlDoc);
             }
-        }
+        };
+
+        var d = new Date();
+        var strUpdTime = formatdate(dt);
         var locupdate = "request-cd=XLOC&comp-no=" + localStorage.LocCompNo +
                        "&tech-id=" + localStorage.LocTechID + "&longitude=" +
                        location.longitude + "&latitude=" + location.latitude +
                        "&accuracy=" + location.accuracy + "&speed=" +
-                       location.speed + "&resp-page=locupdresult.htm&error-page=" +
+                       location.speed + "&timestamp=" + strUpdTime +
+                       "&resp-page=locupdresult.htm&error-page=" +
                        "locupderr.html";
         var url="https://" + localStorage.LocHost + "/cgi-bin/facshtml.cgi";
         console.log(url);
@@ -242,6 +246,21 @@ function start() {
 
 //    alert("Start Tracking");
 }
+
+function formatdate(dt) {
+	strYear = dt.getFullYear().toString();
+	var mth = dt.getMonth() + 1;
+	var str = mth.toString();
+	strMonth = pad(str, 2, '0', STR_PAD_LEFT);
+	str = dt.getDate().toString();
+	strDay = pad(str, 2, '0', STR_PAD_LEFT);
+	var hrs = dt.getHours();
+	var mins = dt.getMinutes();
+	var strTime = pad(hrs, 2, '0', STR_PAD_LEFT) + ":" +
+	              pad(mins,2, '0', STR_PAD_LEFT);
+	return strMonth + "-" + strDay + "-" + strYear + " " + strTime;
+}
+
 
 function stop() {
     if (!blnLocRunning)
