@@ -258,7 +258,7 @@ function formatdate(dt) {
 	var mins = dt.getMinutes().toString();
 	var strTime = pad(hrs, 2, '0', STR_PAD_LEFT) + ":" +
 	              pad(mins,2, '0', STR_PAD_LEFT);
-	return strMonth + "-" + strDay + "-" + strYear + " " + strTime;
+	return strYear + "-" + strMonth + "-" + strDay + " " + strTime;
 }
 
 /**
