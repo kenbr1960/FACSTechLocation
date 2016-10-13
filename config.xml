@@ -30,7 +30,7 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.2.0">
+    <plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.2.4">
         <variable name="ALWAYS_USAGE_DESCRIPTION" value="This app requires background tracking enabled" />
     </plugin>
     <icon src="icon.png" />

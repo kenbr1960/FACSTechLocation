@@ -227,9 +227,10 @@ function start() {
     // BackgroundGeolocation is highly configurable. See platform specific configuration options
     backgroundGeolocation.configure(callbackFn, failureFn, {
         desiredAccuracy: 10,
-        stationaryRadius: 5,
+        stationaryRadius: 20,
         distanceFilter: 5,
         pauseLocationUpdates: false,
+        locationProvider: 0,
         interval: 1000
     });
 
@@ -258,7 +259,7 @@ function formatdate(dt) {
 	var mins = dt.getMinutes().toString();
 	var strTime = pad(hrs, 2, '0', STR_PAD_LEFT) + ":" +
 	              pad(mins,2, '0', STR_PAD_LEFT);
-	return strMonth + "-" + strDay + "-" + strYear + " " + strTime;
+	return strYear + "-" + strMonth + "-" + strDay + " " + strTime;
 }
 
 /**
