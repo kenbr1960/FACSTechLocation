@@ -200,12 +200,16 @@ function start() {
                 var xmlDoc = xmlhttp.responseText;
                 console.log("Got post response: " + xmlDoc);
             }
-        }
+        };
+
+        var d = new Date();
+        var strUpdTime = formatdate(d);
         var locupdate = "request-cd=XLOC&comp-no=" + localStorage.LocCompNo +
                        "&tech-id=" + localStorage.LocTechID + "&longitude=" +
                        location.longitude + "&latitude=" + location.latitude +
                        "&accuracy=" + location.accuracy + "&speed=" +
-                       location.speed + "&resp-page=locupdresult.htm&error-page=" +
+                       location.speed + "&timestamp=" + strUpdTime +
+                       "&resp-page=locupdresult.htm&error-page=" +
                        "locupderr.html";
         var url="https://" + localStorage.LocHost + "/cgi-bin/facshtml.cgi";
         console.log(url);
@@ -241,6 +245,70 @@ function start() {
     // backgroundGeolocation.stop();
 
 //    alert("Start Tracking");
+}
+
+function formatdate(dt) {
+	strYear = dt.getFullYear().toString();
+	var mth = dt.getMonth() + 1;
+	var str = mth.toString();
+	strMonth = pad(str, 2, '0', STR_PAD_LEFT);
+	str = dt.getDate().toString();
+	strDay = pad(str, 2, '0', STR_PAD_LEFT);
+	var hrs = dt.getHours().toString();
+	var mins = dt.getMinutes().toString();
+	var strTime = pad(hrs, 2, '0', STR_PAD_LEFT) + ":" +
+	              pad(mins,2, '0', STR_PAD_LEFT);
+	return strMonth + "-" + strDay + "-" + strYear + " " + strTime;
+}
+
+/**
+ *
+ * Javascript string pad http://www.webtoolkit.info/
+ *
+ */
+
+var STR_PAD_LEFT = 1;
+var STR_PAD_RIGHT = 2;
+var STR_PAD_BOTH = 3;
+
+function pad(str, len, pad, dir) {
+	if (str == undefined) {
+		return;
+	}
+	if (typeof (len) == "undefined") {
+		var len = 0;
+	}
+	if (typeof (pad) == "undefined") {
+		var pad = ' ';
+	}
+	if (typeof (dir) == "undefined") {
+		var dir = STR_PAD_RIGHT;
+	}
+
+	if (len + 1 >= str.length) {
+
+		switch (dir) {
+
+		case STR_PAD_LEFT:
+			str = Array(len + 1 - str.length).join(pad) + str;
+			break;
+
+		case STR_PAD_BOTH:
+			var right = Math.ceil((padlen = len - str.length) / 2);
+			var left = padlen - right;
+			str = Array(left + 1).join(pad) + str + Array(right + 1).join(pad);
+			break;
+
+		default:
+			str = str + Array(len + 1 - str.length).join(pad);
+			break;
+
+		} // switch
+
+	}
+
+	return str;
+
 }
 
 function stop() {
