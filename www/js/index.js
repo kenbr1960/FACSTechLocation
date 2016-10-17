@@ -20,6 +20,7 @@ blnLocRunning = false;
 blnInBackground = false;
 strHost = "";
 intCompNo = 0;
+intSeqNo = 0;
 strTechID = "";
 
 var app = {
@@ -161,6 +162,7 @@ function start() {
     localStorage.setItem("LocHost", strHost);
     localStorage.setItem("LocCompNo", intCompNo);
     localStorage.setItem("LocTechID", strTechID);
+    intSeqNo = 0;
 
     backgroundGeolocation = window.backgroundGeolocation || window.backgroundGeoLocation || window.universalGeolocation;
 
@@ -204,11 +206,12 @@ function start() {
 
         var d = new Date();
         var strUpdTime = formatdate(d);
+        var mph = Math.round(location.speed * 3600 / 1610.3*1000)/1000
         var locupdate = "request-cd=XLOC&comp-no=" + localStorage.LocCompNo +
                        "&tech-id=" + localStorage.LocTechID + "&longitude=" +
                        location.longitude + "&latitude=" + location.latitude +
                        "&accuracy=" + location.accuracy + "&speed=" +
-                       location.speed + "&timestamp=" + strUpdTime +
+                       mph + "&timestamp=" + strUpdTime +
                        "&resp-page=locupdresult.htm&error-page=" +
                        "locupderr.html";
         var url="https://" + localStorage.LocHost + "/cgi-bin/facshtml.cgi";
