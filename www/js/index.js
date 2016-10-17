@@ -237,13 +237,15 @@ function start() {
     backgroundGeolocation.configure(callbackFn, failureFn, {
         desiredAccuracy: 10,
         stationaryRadius: 20,
-        distanceFilter: 0,
-        debug: true,
+        distanceFilter: 10,
+        debug: false,
         pauseLocationUpdates: false,
         startOnBoot: true,
         startForeground: true,
         locationProvider: 0,
-        interval: 3000
+        saveBatteryOnBackground: false,
+        interval: 3000,
+        fastestInterval: 1000
     });
 
     console.log("Start Tracking");
