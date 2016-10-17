@@ -20,6 +20,7 @@ blnLocRunning = false;
 blnInBackground = false;
 strHost = "";
 intCompNo = 0;
+intSeqNo = 0;
 strTechID = "";
 
 var app = {
@@ -161,6 +162,13 @@ function start() {
     localStorage.setItem("LocHost", strHost);
     localStorage.setItem("LocCompNo", intCompNo);
     localStorage.setItem("LocTechID", strTechID);
+    intSeqNo = 0;
+
+    // Your app must execute AT LEAST ONE call for the current position via standard Cordova geolocation,
+    //  in order to prompt the user for Location permission.
+    window.navigator.geolocation.getCurrentPosition(function(location) {
+        console.log('Location from Phonegap');
+    });
 
     backgroundGeolocation = window.backgroundGeolocation || window.backgroundGeoLocation || window.universalGeolocation;
 
@@ -204,11 +212,12 @@ function start() {
 
         var d = new Date();
         var strUpdTime = formatdate(d);
+        var mph = Math.round(location.speed * 3600 / 1610.3*1000)/1000
         var locupdate = "request-cd=XLOC&comp-no=" + localStorage.LocCompNo +
                        "&tech-id=" + localStorage.LocTechID + "&longitude=" +
                        location.longitude + "&latitude=" + location.latitude +
                        "&accuracy=" + location.accuracy + "&speed=" +
-                       location.speed + "&timestamp=" + strUpdTime +
+                       mph + "&timestamp=" + strUpdTime +
                        "&resp-page=locupdresult.htm&error-page=" +
                        "locupderr.html";
         var url="https://" + localStorage.LocHost + "/cgi-bin/facshtml.cgi";
@@ -228,10 +237,15 @@ function start() {
     backgroundGeolocation.configure(callbackFn, failureFn, {
         desiredAccuracy: 10,
         stationaryRadius: 20,
-        distanceFilter: 5,
+        distanceFilter: 10,
+        debug: true,
         pauseLocationUpdates: false,
+        startOnBoot: false,
+        startForeground: true,
         locationProvider: 0,
-        interval: 1000
+        saveBatteryOnBackground: false,
+        interval: 3000,
+        fastestInterval: 1000
     });
 
     console.log("Start Tracking");
