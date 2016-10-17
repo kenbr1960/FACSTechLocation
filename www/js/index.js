@@ -238,7 +238,7 @@ function start() {
         desiredAccuracy: 10,
         stationaryRadius: 20,
         distanceFilter: 10,
-        debug: false,
+        debug: true,
         pauseLocationUpdates: false,
         startOnBoot: false,
         startForeground: true,
