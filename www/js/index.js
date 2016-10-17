@@ -236,14 +236,14 @@ function start() {
     // BackgroundGeolocation is highly configurable. See platform specific configuration options
     backgroundGeolocation.configure(callbackFn, failureFn, {
         desiredAccuracy: 10,
-        stationaryRadius: 100,
-        distanceFilter: 30,
+        stationaryRadius: 20,
+        distanceFilter: 0,
         debug: true,
         pauseLocationUpdates: false,
         startOnBoot: true,
         startForeground: true,
         locationProvider: 0,
-        interval: 1000
+        interval: 3000
     });
 
     console.log("Start Tracking");
