@@ -240,7 +240,7 @@ function start() {
         distanceFilter: 10,
         debug: false,
         pauseLocationUpdates: false,
-        startOnBoot: true,
+        startOnBoot: false,
         startForeground: true,
         locationProvider: 0,
         saveBatteryOnBackground: false,
