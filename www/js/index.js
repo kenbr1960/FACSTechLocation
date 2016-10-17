@@ -212,7 +212,7 @@ function start() {
 
         var d = new Date();
         var strUpdTime = formatdate(d);
-        var mph = Math.round(location.speed * 3600 / 1610.3*1000)/1000
+        var mph = Math.round(location.speed * 3600 / 1610.3*1000)/1000;
         var locupdate = "request-cd=XLOC&comp-no=" + localStorage.LocCompNo +
                        "&tech-id=" + localStorage.LocTechID + "&longitude=" +
                        location.longitude + "&latitude=" + location.latitude +
@@ -240,7 +240,7 @@ function start() {
         distanceFilter: 10,
         notificationTitle: 'FACS Background Tracking',
         notificationText: 'enabled',
-        activityType, 'Fitness',
+        activityType: 'Fitness',
         debug: false,
         pauseLocationUpdates: false,
         startOnBoot: false,
@@ -291,16 +291,16 @@ var STR_PAD_BOTH = 3;
 
 function pad(str, len, pad, dir) {
 	if (str == undefined) {
-		return;
+		return -1;
 	}
 	if (typeof (len) == "undefined") {
-		var len = 0;
+		len = 0;
 	}
 	if (typeof (pad) == "undefined") {
-		var pad = ' ';
+		pad = ' ';
 	}
 	if (typeof (dir) == "undefined") {
-		var dir = STR_PAD_RIGHT;
+		dir = STR_PAD_RIGHT;
 	}
 
 	if (len + 1 >= str.length) {
