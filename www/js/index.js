@@ -238,14 +238,17 @@ function start() {
         desiredAccuracy: 10,
         stationaryRadius: 20,
         distanceFilter: 10,
-        debug: true,
+        notificationTitle: 'FACS Background Tracking',
+        notificationText: 'enabled',
+        activityType, 'Fitness',
+        debug: false,
         pauseLocationUpdates: false,
         startOnBoot: false,
         startForeground: true,
-        locationProvider: 0,
+        locationProvider: 1,
         saveBatteryOnBackground: false,
-        interval: 3000,
-        fastestInterval: 1000
+        interval: 1000,
+        fastestInterval: 500
     });
 
     console.log("Start Tracking");
