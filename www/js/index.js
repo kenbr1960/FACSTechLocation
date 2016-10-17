@@ -164,6 +164,12 @@ function start() {
     localStorage.setItem("LocTechID", strTechID);
     intSeqNo = 0;
 
+    // Your app must execute AT LEAST ONE call for the current position via standard Cordova geolocation,
+    //  in order to prompt the user for Location permission.
+    window.navigator.geolocation.getCurrentPosition(function(location) {
+        console.log('Location from Phonegap');
+    });
+
     backgroundGeolocation = window.backgroundGeolocation || window.backgroundGeoLocation || window.universalGeolocation;
 
     /**
