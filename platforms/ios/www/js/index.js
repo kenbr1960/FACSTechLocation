@@ -212,7 +212,7 @@ function start() {
 
         var d = new Date();
         var strUpdTime = formatdate(d);
-        var mph = Math.round(location.speed * 3600 / 1610.3*1000)/1000
+        var mph = Math.round(location.speed * 3600 / 1610.3*1000)/1000;
         var locupdate = "request-cd=XLOC&comp-no=" + localStorage.LocCompNo +
                        "&tech-id=" + localStorage.LocTechID + "&longitude=" +
                        location.longitude + "&latitude=" + location.latitude +
@@ -235,19 +235,19 @@ function start() {
 
     // BackgroundGeolocation is highly configurable. See platform specific configuration options
     backgroundGeolocation.configure(callbackFn, failureFn, {
-        desiredAccuracy: 10,
-        stationaryRadius: 20,
-        distanceFilter: 10,
+        desiredAccuracy: 0,
+        stationaryRadius: 5,
+        distanceFilter: 5,
         notificationTitle: 'FACS Background Tracking',
         notificationText: 'enabled',
-        activityType, 'Fitness',
+        activityType: 'Fitness',
         debug: false,
         pauseLocationUpdates: false,
         startOnBoot: false,
         startForeground: true,
         locationProvider: 1,
         saveBatteryOnBackground: false,
-        interval: 1000,
+        interval: 10000,
         fastestInterval: 500
     });
 
@@ -291,16 +291,16 @@ var STR_PAD_BOTH = 3;
 
 function pad(str, len, pad, dir) {
 	if (str == undefined) {
-		return;
+		return -1;
 	}
 	if (typeof (len) == "undefined") {
-		var len = 0;
+		len = 0;
 	}
 	if (typeof (pad) == "undefined") {
-		var pad = ' ';
+		pad = ' ';
 	}
 	if (typeof (dir) == "undefined") {
-		var dir = STR_PAD_RIGHT;
+		dir = STR_PAD_RIGHT;
 	}
 
 	if (len + 1 >= str.length) {
