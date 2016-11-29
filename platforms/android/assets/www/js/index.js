@@ -235,9 +235,9 @@ function start() {
 
     // BackgroundGeolocation is highly configurable. See platform specific configuration options
     backgroundGeolocation.configure(callbackFn, failureFn, {
-        desiredAccuracy: 10,
-        stationaryRadius: 20,
-        distanceFilter: 10,
+        desiredAccuracy: 0,
+        stationaryRadius: 5,
+        distanceFilter: 5,
         notificationTitle: 'FACS Background Tracking',
         notificationText: 'enabled',
         activityType: 'Fitness',
@@ -247,7 +247,7 @@ function start() {
         startForeground: true,
         locationProvider: 1,
         saveBatteryOnBackground: false,
-        interval: 1000,
+        interval: 10000,
         fastestInterval: 500
     });
 
