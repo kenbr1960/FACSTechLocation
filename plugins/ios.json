@@ -65,7 +65,7 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "cordova-plugin-mauron85-background-geolocation": {
-            "ALWAYS_USAGE_DESCRIPTION": "This app requires background tracking enabled",
+            "ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
             "PACKAGE_NAME": "com.facsman.techlocation"
         }
     },

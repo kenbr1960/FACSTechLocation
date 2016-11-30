@@ -113,7 +113,7 @@
                     ],
                     "NSLocationAlwaysUsageDescription": [
                         {
-                            "xml": "<string>This app requires background tracking enabled</string>",
+                            "xml": "<string>This app requires background location tracking</string>",
                             "count": 1
                         }
                     ],
@@ -198,7 +198,7 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "cordova-plugin-mauron85-background-geolocation": {
-            "ALWAYS_USAGE_DESCRIPTION": "This app requires background tracking enabled",
+            "ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
             "PACKAGE_NAME": "com.facsman.techlocation"
         }
     },
@@ -795,6 +795,6 @@
         "cordova-plugin-statusbar": "2.1.3",
         "cordova-plugin-vibration": "2.1.2",
         "cordova-plugin-whitelist": "1.2.2",
-        "cordova-plugin-mauron85-background-geolocation": "2.2.4"
+        "cordova-plugin-mauron85-background-geolocation": "2.2.5"
     }
 }

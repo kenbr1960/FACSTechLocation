@@ -43,11 +43,6 @@
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.facsman.techlocation"
         },
-        "cordova-plugin-mauron85-background-geolocation": {
-            "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
-            "CONTENT_AUTHORITY": "$PACKAGE_NAME",
-            "PACKAGE_NAME": "com.facsman.techlocation"
-        },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.facsman.techlocation"
         },
@@ -67,6 +62,11 @@
             "PACKAGE_NAME": "com.facsman.techlocation"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.facsman.techlocation"
+        },
+        "cordova-plugin-mauron85-background-geolocation": {
+            "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+            "CONTENT_AUTHORITY": "$PACKAGE_NAME",
             "PACKAGE_NAME": "com.facsman.techlocation"
         }
     },

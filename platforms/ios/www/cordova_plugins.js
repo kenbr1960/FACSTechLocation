@@ -593,7 +593,7 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-mauron85-background-geolocation": "2.2.4"
+    "cordova-plugin-mauron85-background-geolocation": "2.2.5"
 }
 // BOTTOM OF METADATA
 });

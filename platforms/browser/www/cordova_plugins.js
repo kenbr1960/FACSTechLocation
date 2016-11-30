@@ -636,7 +636,7 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-compat": "1.0.0",
-    "cordova-plugin-mauron85-background-geolocation": "2.2.4"
+    "cordova-plugin-mauron85-background-geolocation": "2.2.5"
 }
 // BOTTOM OF METADATA
 });
